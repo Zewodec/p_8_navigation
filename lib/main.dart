@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:p_8_navigation/features/NewsArticlePage/NewsArticleMultiTypesPage.dart';
 
 import 'features/NewsArticlePage/NewsArticlePage.dart';
 import 'features/NewsWidget/NewsWidget.dart';
@@ -40,6 +42,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String result = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,7 +108,25 @@ class _MyHomePageState extends State<MyHomePage> {
               imageUrl: "https://picsum.photos/302",
               title: "Games",
               info: "Different games improves thinking productivity",
-              onPressed: () => {}),
+              onPressed: () async => {
+                    result = await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const NewsArticlePage(
+                              imageUrl: "https://picsum.photos/302",
+                              title: "Games",
+                              content:
+                                  "Different games improves thinking productivity Different games improves thinking productivity Different games improves thinking productivity Different games improves thinking productivity")),
+                    ),
+                    Fluttertoast.showToast(
+                        msg: result,
+                        toastLength: Toast.LENGTH_LONG,
+                        gravity: ToastGravity.BOTTOM,
+                        timeInSecForIosWeb: 1,
+                        backgroundColor: Colors.black,
+                        textColor: Colors.white,
+                        fontSize: 16.0),
+                  }),
           const SizedBox(
             height: 10,
           ),
@@ -112,7 +134,18 @@ class _MyHomePageState extends State<MyHomePage> {
               imageUrl: "https://picsum.photos/304",
               title: "Never give up",
               info: "Never give up in developing this project",
-              onPressed: () => {}),
+              onPressed: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const NewsArticleMultiTypesPage(
+                            imageUrl: "https://picsum.photos/304",
+                            title: "Never give up",
+                            content:
+                                "Never give up in developing this project"),
+                      ),
+                    )
+                  }),
         ],
       ),
     );

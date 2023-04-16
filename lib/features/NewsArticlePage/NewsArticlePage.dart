@@ -39,11 +39,16 @@ class NewsArticlePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-
             Text(
               content,
               style: const TextStyle(fontSize: 16),
             ),
+            const SizedBox(height: 32),
+            ElevatedButton(
+              onPressed: () =>
+                  {Navigator.pop(context, "Returned from news page")},
+              child: const Text("Move back"),
+            )
           ],
         ),
       ),

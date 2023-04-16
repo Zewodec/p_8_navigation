@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.adamivaniush.p_8_navigation">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="p_8_navigation"
         android:name="${applicationName}"
