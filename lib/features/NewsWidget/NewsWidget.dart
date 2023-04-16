@@ -22,8 +22,7 @@ class NewsWidget extends StatelessWidget {
         const SizedBox(
           width: 15,
         ),
-        // Left column with photo
-        Image.network(
+                Image.network(
           imageUrl,
           width: 120,
           height: 120,
@@ -31,7 +30,6 @@ class NewsWidget extends StatelessWidget {
         ),
         const SizedBox(width: 16),
 
-        // Right column with title, info, and button
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

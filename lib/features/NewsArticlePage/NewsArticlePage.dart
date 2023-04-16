@@ -23,8 +23,7 @@ class NewsArticlePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // News image
-            Image.network(
+                        Image.network(
               imageUrl,
               width: double.infinity,
               height: 200,
@@ -32,7 +31,6 @@ class NewsArticlePage extends StatelessWidget {
             ),
             const SizedBox(height: 16),
 
-            // News title
             Text(
               title,
               style: const TextStyle(
@@ -42,7 +40,6 @@ class NewsArticlePage extends StatelessWidget {
             ),
             const SizedBox(height: 16),
 
-            // News content
             Text(
               content,
               style: const TextStyle(fontSize: 16),
